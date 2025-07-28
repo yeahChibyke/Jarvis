@@ -6,7 +6,7 @@ import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interf
 library PerUSDLibrary {
     // Function to get price of BTC per USD
     function BTCperUSD() internal view returns (uint256) {
-        AggregatorV3Interface btc_per_usd_Price = AggregatorV3Interface(0x1b44F3514812d835EB1BDB0acB33d3fA3351Ee43);
+        AggregatorV3Interface btc_per_usd_Price = AggregatorV3Interface(0x38c8b98A2Cb36a55234323D7eCCD36ad3bFC5954);
         (, int256 answer,,,) = btc_per_usd_Price.latestRoundData();
         return uint256(answer * 1e10);
     }
