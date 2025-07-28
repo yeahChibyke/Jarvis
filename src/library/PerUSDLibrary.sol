@@ -41,7 +41,7 @@ library PerUSDLibrary {
 
     // Function to get the price of USDC per USD
     function USDCperUSD() internal view returns (uint256) {
-        AggregatorV3Interface usdc_per_usd_price = AggregatorV3Interface(0x6f7be09227d98Ce1Df812d5Bc745c0c775507E92);
+        AggregatorV3Interface usdc_per_usd_price = AggregatorV3Interface(0xA2F78ab2355fe2f984D808B5CeE7FD0A93D5270E);
         (, int256 answer,,,) = usdc_per_usd_price.latestRoundData();
         return uint256(answer * 1e10);
     }
