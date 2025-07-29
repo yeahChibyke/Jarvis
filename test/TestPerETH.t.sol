@@ -18,4 +18,9 @@ contract TestPerETH is Test {
         uint256 value = 1;
         console2.log(gpe.getUSDperETH(value)); // 0.000_393_981_475_936_557
     }
+
+    function test_get_btc_per_eth() public view {
+        uint256 value = 1;
+        console2.log(gpe.getBTCperETH(value)); // _311_590_173_036.00
+    }
 }
