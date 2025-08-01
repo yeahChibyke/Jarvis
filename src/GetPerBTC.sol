@@ -13,7 +13,7 @@ contract GetPerBTC {
     // Function to get the price of ETH per BTC
     function getETHperBTC(uint256 value) external view returns (uint256) {
         uint256 eth_per_btc = PerBTCLibrary.ETHperBTC();
-        return (eth_per_btc * value);
+        return (eth_per_btc * value) * 1e10;
     }
 
     // Function to get the price of EUR per BTC
@@ -26,6 +26,12 @@ contract GetPerBTC {
     function getGBPperBTC(uint256 value) external view returns (uint256) {
         uint256 gbp_per_btc = PerBTCLibrary.GBPperBTC();
         return (gbp_per_btc * value);
+    }
+
+    // Function to get the price of USD in BTC
+    function getUSDperBTC(uint256 value) external view returns (uint256) {
+        uint256 usd_per_btc = PerBTCLibrary.USDperBTC();
+        return (value * usd_per_btc);
     }
 
     // Function to get the price of USDC in BTC

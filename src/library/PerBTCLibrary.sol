@@ -34,6 +34,13 @@ library PerBTCLibrary {
         return gbp_per_btc_price;
     }
 
+    function USDperBTC() internal view returns (uint256) {
+        uint256 btc_per_usd_price = PerUSDLibrary.BTCperUSD();
+        uint256 btc_per_btc_price = 1e18;
+        uint256 usd_per_btc_price = (btc_per_btc_price * 1e18) / btc_per_usd_price;
+        return usd_per_btc_price;
+    }
+
     function USDCperBTC() internal view returns (uint256) {
         uint256 usdc_per_usd_price = PerUSDLibrary.USDCperUSD();
         uint256 btc_per_usd_price = PerUSDLibrary.BTCperUSD();
